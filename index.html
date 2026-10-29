@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f8f5ef">
-  <meta name="description" content="Undangan pernikahan Chaska Vebriansyah dan Feristha Mathasia, 27 Januari 2027.">
-  <title>Chaska & Feristha — Undangan Pernikahan</title>
+  <meta name="description" content="Undangan pernikahan Chaska Vebriansyah dan Feristha Mathasia, Rabu 27 Januari 2027.">
+  <meta property="og:title" content="Chaska & Feristha | Undangan Pernikahan">
+  <meta property="og:description" content="Dengan penuh kebahagiaan, kami mengundang Anda untuk menghadiri pernikahan kami.">
+  <title>Chaska & Feristha | Undangan Pernikahan</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +22,7 @@
       --green: #65765c;
       --ink: #393b32;
       --muted: #77766d;
+      --border: #e9dfcd;
     }
 
     * { box-sizing: border-box; }
@@ -34,15 +37,14 @@
       line-height: 1.8;
     }
 
+    button, input, select, textarea { font: inherit; }
     button, a { -webkit-tap-highlight-color: transparent; }
-
-    button { font: inherit; cursor: pointer; }
-
+    img { max-width: 100%; }
     a { color: inherit; }
 
     .cover {
       min-height: 100svh;
-      padding: 35px 20px;
+      padding: 40px 24px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -50,9 +52,8 @@
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(#f8f5efcc, #f8f5efeb),
-        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=85')
-        center/cover;
+        linear-gradient(#f8f5efde, #f8f5efeb),
+        url('images/chaska.jpeg') center 35% / cover;
     }
 
     .cover::before {
@@ -64,14 +65,15 @@
     }
 
     .cover-content {
-      max-width: 600px;
       position: relative;
-      padding: 30px 8px;
+      max-width: 620px;
+      padding: 25px 8px;
+      animation: appear 1.2s ease both;
     }
 
-    .eyebrow {
+    .eyebrow, .section-label {
       text-transform: uppercase;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       font-size: 11px;
       color: var(--green);
     }
@@ -84,7 +86,7 @@
     .cover h1 {
       font-size: clamp(42px, 9vw, 76px);
       line-height: 1.15;
-      margin: 25px 0;
+      margin: 24px 0;
     }
 
     .ampersand {
@@ -92,17 +94,18 @@
       color: var(--gold);
       font-style: italic;
       font-size: .75em;
-      margin: 5px 0;
+      margin: 2px 0;
     }
 
     .cover-photo {
-      width: 110px;
-      height: 110px;
+      width: 125px;
+      height: 125px;
       object-fit: cover;
+      object-position: center 30%;
       border-radius: 50%;
-      border: 4px solid #fffdf9;
+      border: 4px solid var(--white);
       outline: 1px solid var(--gold);
-      margin: 20px auto;
+      margin: 18px auto;
     }
 
     .button {
@@ -113,11 +116,14 @@
       padding: 12px 24px;
       border-radius: 3px;
       text-decoration: none;
-      margin-top: 18px;
+      margin-top: 12px;
       transition: .25s;
     }
 
-    .button:hover { transform: translateY(-2px); }
+    .button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
 
     .button-outline {
       background: transparent;
@@ -136,12 +142,7 @@
       margin: auto;
     }
 
-    .section-label {
-      color: var(--green);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 11px;
-    }
+    .section-label { margin-bottom: 8px; }
 
     h2 {
       font-size: clamp(32px, 6vw, 46px);
@@ -149,35 +150,44 @@
       margin: 10px 0 22px;
     }
 
-    h3 { font-size: 26px; }
-
-    .intro { max-width: 620px; margin: 0 auto; }
-
-    .floral {
-      font-size: 28px;
-      color: var(--gold);
-      margin: 14px 0;
+    h3 {
+      font-size: 25px;
+      margin: 12px 0;
     }
 
-    .couple-grid, .event-grid, .gallery {
+    p { overflow-wrap: anywhere; }
+
+    .intro {
+      max-width: 620px;
+      margin: auto;
+    }
+
+    .floral {
+      font-size: 29px;
+      color: var(--gold);
+      margin: 12px 0;
+    }
+
+    .couple-grid, .event-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
-      margin-top: 35px;
+      margin-top: 32px;
     }
 
     .card {
       background: var(--white);
       padding: 26px 20px;
-      border: 1px solid #b59a6730;
+      border: 1px solid var(--border);
       border-radius: 5px;
-      box-shadow: 0 8px 30px #453c2510;
+      box-shadow: 0 8px 30px #453c250a;
     }
 
     .couple-img {
       width: 145px;
       height: 175px;
       object-fit: cover;
+      object-position: center 30%;
       border-radius: 90px 90px 8px 8px;
       border: 3px solid white;
       outline: 1px solid #b59a6770;
@@ -186,19 +196,13 @@
     .couple-name {
       font-family: 'Playfair Display', serif;
       font-size: 27px;
-      line-height: 1.3;
+      line-height: 1.35;
       margin: 18px 0 8px;
-      overflow-wrap: anywhere;
     }
 
-    .muted { color: var(--muted); font-size: 13px; }
-
-    .verse {
-      font-family: serif;
-      font-size: 29px;
-      line-height: 2;
-      direction: rtl;
-      color: var(--green);
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .countdown {
@@ -212,7 +216,7 @@
     .time-box {
       background: var(--white);
       padding: 16px 4px;
-      border: 1px solid #b59a6760;
+      border: 1px solid var(--border);
     }
 
     .time-box strong {
@@ -223,27 +227,32 @@
     }
 
     .time-box span { font-size: 11px; }
-
     .event-card h3 { color: var(--green); }
 
-    .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
 
     .gallery img {
       width: 100%;
-      height: 240px;
+      height: 260px;
       object-fit: cover;
+      object-position: center 30%;
       border-radius: 5px;
-      cursor: pointer;
-      transition: .25s;
+      cursor: zoom-in;
+      transition: transform .25s;
     }
 
     .gallery img:hover { transform: scale(1.02); }
 
-    .account-number {
-      font-size: clamp(19px, 4vw, 27px);
-      letter-spacing: 1px;
-      font-weight: 500;
-      overflow-wrap: anywhere;
+    .verse {
+      font-family: serif;
+      font-size: 28px;
+      line-height: 2;
+      direction: rtl;
       color: var(--green);
     }
 
@@ -252,13 +261,16 @@
       border-left: 3px solid var(--gold);
       padding: 22px;
       text-align: left;
-      margin-top: 25px;
+      margin-top: 22px;
+      overflow-wrap: anywhere;
     }
 
-    footer {
-      padding: 55px 20px;
-      text-align: center;
-      background: #e9e8dc;
+    .account-number {
+      font-size: clamp(19px, 4vw, 27px);
+      letter-spacing: 1px;
+      font-weight: 500;
+      color: var(--green);
+      overflow-wrap: anywhere;
     }
 
     .music-button {
@@ -275,25 +287,100 @@
       box-shadow: 0 4px 18px #0002;
     }
 
-    .hidden { display: none !important; }
-
-    .fade-in {
-      animation: fadeIn 1s ease both;
+    .music-button.playing {
+      animation: rotateMusic 4s linear infinite;
     }
 
-    @keyframes fadeIn {
+    .hidden { display: none !important; }
+
+    .fade-in { animation: appear .9s ease both; }
+
+    .timeline {
+      max-width: 570px;
+      margin: 28px auto 0;
+      text-align: left;
+    }
+
+    .timeline-item {
+      border-left: 2px solid var(--gold);
+      padding: 5px 0 20px 22px;
+      margin-left: 8px;
+    }
+
+    .timeline-item h3 { margin-top: 0; }
+
+    footer {
+      padding: 52px 20px;
+      text-align: center;
+      background: #e9e8dc;
+    }
+
+    .footer-name {
+      font-size: 36px;
+      margin: 10px 0;
+    }
+
+    .lightbox {
+      position: fixed;
+      z-index: 100;
+      inset: 0;
+      padding: 24px;
+      background: #000e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 85vh;
+      object-fit: contain;
+    }
+
+    .lightbox button {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      font-size: 28px;
+      color: white;
+      background: transparent;
+      border: 0;
+    }
+
+    @keyframes appear {
       from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
+    @keyframes rotateMusic {
+      to { transform: rotate(360deg); }
+    }
+
     @media (max-width: 600px) {
       section { padding: 58px 18px; }
+
       .couple-grid, .event-grid { gap: 12px; }
+
       .card { padding: 20px 12px; }
-      .couple-img { width: 115px; height: 145px; }
+
+      .couple-img {
+        width: 112px;
+        height: 140px;
+      }
+
       .couple-name { font-size: 21px; }
-      .gallery img { height: 170px; }
-      .verse { font-size: 25px; }
+      .gallery img { height: 175px; }
+      .verse { font-size: 24px; }
+      .countdown { gap: 6px; }
+      .time-box { padding: 12px 2px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
@@ -302,13 +389,15 @@
 
   <header class="cover" id="cover">
     <div class="cover-content">
-      <div class="eyebrow">The Wedding Invitation</div>
-      <img class="cover-photo"
-        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=300&q=80"
-        alt="Dekorasi pernikahan romantis">
+      <div class="eyebrow">Undangan Pernikahan</div>
+
+      <img
+        class="cover-photo"
+        src="images/chaska.jpeg"
+        alt="Foto Chaska Vebriansyah">
 
       <p>Dengan memohon rahmat dan ridho Allah SWT</p>
-      <p>Kami mengundang Anda untuk menghadiri pernikahan</p>
+      <p>Kami mengundang Anda untuk menghadiri pernikahan kami</p>
 
       <h1>
         Chaska
@@ -317,7 +406,8 @@
       </h1>
 
       <p class="eyebrow">Rabu, 27 Januari 2027</p>
-      <p>Kepada Yth. <strong id="guestName">Tamu Undangan</strong></p>
+      <p>Kepada Yth.</p>
+      <p><strong id="guestName">Tamu Undangan</strong></p>
 
       <button class="button" id="openInvitation">
         Buka Undangan
@@ -331,9 +421,9 @@
       <div class="inner">
         <div class="floral">❦</div>
         <p class="intro">
-          Dengan penuh rasa syukur, kami bermaksud mengundang
-          Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu
-          pada hari pernikahan kami.
+          Dengan penuh rasa syukur dan kebahagiaan, kami bermaksud
+          mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan
+          doa restu pada hari pernikahan kami.
         </p>
         <h2>Chaska & Feristha</h2>
         <p class="muted">Dua hati, satu tujuan, selamanya dalam cinta.</p>
@@ -347,24 +437,27 @@
 
         <div class="couple-grid">
           <article class="card">
-            <img class="couple-img"
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
-              alt="Foto contoh mempelai pria">
+            <img
+              class="couple-img"
+              src="images/chaska.jpeg"
+              alt="Chaska Vebriansyah">
+
             <div class="couple-name">Chaska Vebriansyah</div>
             <p class="muted">Putra dari</p>
-            <p>Nama orang tua akan dilengkapi</p>
+            <p>Nama orang tua belum dilengkapi</p>
           </article>
 
           <article class="card">
-            <img class="couple-img"
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
-              alt="Foto contoh mempelai wanita">
+            <img
+              class="couple-img"
+              src="images/feristha.jpeg"
+              alt="Feristha Mathasia">
+
             <div class="couple-name">Feristha Mathasia</div>
             <p class="muted">Putri dari</p>
-            <p>Nama orang tua akan dilengkapi</p>
+            <p>Nama orang tua belum dilengkapi</p>
           </article>
         </div>
-        <p class="muted">Foto di atas hanya contoh. Ganti dengan foto asli kedua mempelai.</p>
       </div>
     </section>
 
@@ -374,13 +467,26 @@
         <h2>Menuju Hari Bahagia</h2>
         <p>Rabu, 27 Januari 2027</p>
 
-        <div class="countdown" aria-label="Hitung mundur pernikahan">
-          <div class="time-box"><strong id="days">0</strong><span>Hari</span></div>
-          <div class="time-box"><strong id="hours">00</strong><span>Jam</span></div>
-          <div class="time-box"><strong id="minutes">00</strong><span>Menit</span></div>
-          <div class="time-box"><strong id="seconds">00</strong><span>Detik</span></div>
+        <div class="countdown">
+          <div class="time-box">
+            <strong id="days">0</strong>
+            <span>Hari</span>
+          </div>
+          <div class="time-box">
+            <strong id="hours">00</strong>
+            <span>Jam</span>
+          </div>
+          <div class="time-box">
+            <strong id="minutes">00</strong>
+            <span>Menit</span>
+          </div>
+          <div class="time-box">
+            <strong id="seconds">00</strong>
+            <span>Detik</span>
+          </div>
         </div>
-        <p id="countdownMessage" class="muted"></p>
+
+        <p id="countdownMessage" class="muted" aria-live="polite"></p>
       </div>
     </section>
 
@@ -399,7 +505,7 @@
 
           <article class="card event-card">
             <div class="floral">❀</div>
-            <h3>Resepsi</h3>
+            <h3>Resepsi Pernikahan</h3>
             <p>Rabu, 27 Januari 2027</p>
             <p>Waktu akan diinformasikan</p>
           </article>
@@ -411,16 +517,21 @@
       <div class="inner">
         <p class="section-label">Lokasi Acara</p>
         <h2>Mulyorejo 2</h2>
+
         <p>
           Mulyorejo 2, Kecamatan Bunga Mayang,<br>
           Kabupaten Lampung Utara, Lampung, Indonesia.
         </p>
+
         <p class="muted">
-          Pastikan titik lokasi acara sudah benar sebelum berangkat.
+          Pastikan titik lokasi acara yang tepat sebelum berangkat.
         </p>
-        <a class="button"
-          href="https://www.google.com/maps/search/?api=1&query=Mulyorejo+2%2C+Bunga+Mayang%2C+Lampung+Utara%2C+Lampung"
-          target="_blank" rel="noopener noreferrer">
+
+        <a
+          class="button"
+          href="https://www.google.com/maps/search/?api=1&query=Mulyorejo%202%2C%20Kecamatan%20Bunga%20Mayang%2C%20Kabupaten%20Lampung%20Utara%2C%20Lampung"
+          target="_blank"
+          rel="noopener noreferrer">
           Buka Google Maps
         </a>
       </div>
@@ -430,24 +541,62 @@
       <div class="inner">
         <p class="section-label">Our Memories</p>
         <h2>Galeri Kenangan</h2>
-        <p class="muted">Gambar berikut adalah foto contoh. Ganti dengan foto prewedding kalian.</p>
+        <p class="muted">Tekan foto untuk melihat ukuran lebih besar.</p>
 
         <div class="gallery">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=85" alt="Inspirasi dekorasi pernikahan" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=700&q=85" alt="Inspirasi foto pernikahan" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=85" alt="Inspirasi momen pernikahan" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=700&q=85" alt="Inspirasi dekorasi romantis" loading="lazy">
+          <img src="images/chaska.jpeg"
+               alt="Foto Chaska Vebriansyah"
+               loading="lazy">
+
+          <img src="images/feristha.jpeg"
+               alt="Foto Feristha Mathasia"
+               loading="lazy">
+
+          <img src="images/chaska.jpeg"
+               alt="Potret Chaska"
+               loading="lazy">
+
+          <img src="images/feristha.jpeg"
+               alt="Potret Feristha"
+               loading="lazy">
         </div>
       </div>
     </section>
 
     <section>
       <div class="inner">
+        <p class="section-label">Perjalanan Cinta</p>
+        <h2>Kisah Kami</h2>
+        <p class="muted">Cerita ini dapat kamu sesuaikan dengan perjalanan kalian.</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Awal Pertemuan</h3>
+            <p>Tambahkan cerita awal pertemuan kalian di sini.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Saling Mengenal</h3>
+            <p>Tambahkan kenangan dan momen berharga kalian.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Hari Pernikahan</h3>
+            <p>Rabu, 27 Januari 2027 — memulai perjalanan baru bersama.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#fffdf9">
+      <div class="inner">
         <p class="section-label">Doa Pernikahan</p>
         <h2>Doa dan Harapan</h2>
 
         <div class="prayer">
-          <p class="verse">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً</p>
+          <p class="verse">
+            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً
+          </p>
           <p><strong>QS. Ar-Rum: 21 (bagian ayat)</strong></p>
           <p>
             Artinya: Dan di antara tanda-tanda (kebesaran)-Nya ialah
@@ -458,7 +607,9 @@
         </div>
 
         <div class="prayer">
-          <p class="verse">بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+          <p class="verse">
+            بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+          </p>
           <p><strong>Doa untuk pengantin</strong></p>
           <p>
             Latin: Baarakallahu laka, wa baaraka 'alaika,
@@ -472,10 +623,11 @@
       </div>
     </section>
 
-    <section style="background:#fffdf9">
+    <section>
       <div class="inner">
         <p class="section-label">Wedding Gift</p>
         <h2>Amplop Digital</h2>
+
         <p>
           Doa restu Anda merupakan hadiah terindah bagi kami.
           Bagi yang ingin berbagi tanda kasih, berikut informasi rekening kami.
@@ -484,63 +636,101 @@
         <div class="card">
           <h3>Bank BRI</h3>
           <p class="muted">Nomor rekening</p>
-          <div class="account-number" id="accountNumber">731301005654507</div>
+
+          <div class="account-number" id="accountNumber">
+            731301005654507
+          </div>
+
           <p>Atas nama <strong>CHASKA VEBRIANSYAH</strong></p>
-          <button class="button" id="copyAccount">Salin Nomor Rekening</button>
+
+          <button class="button" id="copyAccount">
+            Salin Nomor Rekening
+          </button>
+
           <p id="copyMessage" class="muted" aria-live="polite"></p>
         </div>
       </div>
     </section>
 
-    <section>
+    <section style="background:#fffdf9">
       <div class="inner">
-        <p class="section-label">Kirim Doa dan Ucapan</p>
-        <h2>Ucapan untuk Mempelai</h2>
-        <p>Silakan kirim ucapan dan doa terbaik melalui WhatsApp.</p>
+        <p class="section-label">Ucapan dan Doa</p>
+        <h2>Kirim Ucapan melalui WhatsApp</h2>
 
-        <a class="button button-outline"
-          href="https://wa.me/?text=Selamat%20menempuh%20hidup%20baru%2C%20Chaska%20dan%20Feristha.%20Semoga%20menjadi%20keluarga%20yang%20sakinah%2C%20mawaddah%2C%20dan%20rahmah."
-          target="_blank" rel="noopener noreferrer">
-          Kirim Ucapan
+        <p>
+          Kami akan sangat berbahagia menerima doa dan ucapan terbaik Anda.
+        </p>
+
+        <a
+          class="button button-outline"
+          href="https://wa.me/6285773334303?text=Assalamu%27alaikum%2C%20saya%20ingin%20mengirimkan%20ucapan%20pernikahan%20untuk%20Chaska%20Vebriansyah%20dan%20Feristha%20Mathasia."
+          target="_blank"
+          rel="noopener noreferrer">
+          Kirim Ucapan melalui WhatsApp
         </a>
+
+        <p class="muted">
+          WhatsApp: 0857-7333-4303
+        </p>
       </div>
     </section>
 
-    <section style="background:#fffdf9">
+    <section>
       <div class="inner">
         <div class="floral">❦</div>
         <h2>Terima Kasih</h2>
+
         <p>
-          Merupakan kebahagiaan bagi kami apabila Anda berkenan hadir
-          dan memberikan doa restu.
+          Merupakan suatu kehormatan dan kebahagiaan bagi kami
+          apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
         </p>
-        <h2>Chaska & Feristha</h2>
+
+        <p>Wassalamu'alaikum warahmatullahi wabarakatuh.</p>
+        <div class="script footer-name">Chaska & Feristha</div>
         <p class="muted">27 Januari 2027</p>
       </div>
     </section>
 
   </main>
 
-  <audio id="weddingMusic" src="wedding.mp3" loop preload="none"></audio>
-  <button id="musicButton" class="music-button hidden"
-    aria-label="Putar atau jeda musik" title="Musik">
+  <audio id="weddingMusic" src="music/wedding.mp3" loop preload="none"></audio>
+
+  <button
+    id="musicButton"
+    class="music-button hidden"
+    aria-label="Putar atau jeda musik"
+    title="Musik">
     ♪
   </button>
 
+  <div
+    id="lightbox"
+    class="lightbox hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Pratinjau foto">
+
+    <button id="closeLightbox" aria-label="Tutup foto">&times;</button>
+    <img id="lightboxImage" src="" alt="Foto galeri ukuran besar">
+  </div>
+
   <footer>
     <p class="script">Made with love</p>
-    <p class="muted">Undangan Pernikahan Chaska & Feristha</p>
+    <div class="script footer-name">Chaska & Feristha</div>
+    <p class="muted">Undangan Pernikahan · 2027</p>
   </footer>
 
   <script>
+    // Personalized guest name from ?to=NamaTamu
     const params = new URLSearchParams(window.location.search);
     const guest = params.get('to');
 
     if (guest) {
       document.getElementById('guestName').textContent =
-        guest.replace(/[<>]/g, '').slice(0, 100);
+        guest.slice(0, 100);
     }
 
+    // Open invitation and start music after user interaction
     const cover = document.getElementById('cover');
     const invitation = document.getElementById('invitation');
     const music = document.getElementById('weddingMusic');
@@ -557,6 +747,7 @@
       try {
         await music.play();
         musicButton.textContent = '♫';
+        musicButton.classList.add('playing');
       } catch (error) {
         musicButton.textContent = '♪';
       }
@@ -567,20 +758,28 @@
         try {
           await music.play();
           musicButton.textContent = '♫';
+          musicButton.classList.add('playing');
         } catch (error) {
-          alert('Musik belum tersedia. Tambahkan file wedding.mp3 ke repository.');
+          alert('Musik belum tersedia. Unggah file wedding.mp3 ke folder music.');
         }
       } else {
         music.pause();
         musicButton.textContent = '♪';
+        musicButton.classList.remove('playing');
       }
     });
 
+    music.addEventListener('error', () => {
+      musicButton.classList.remove('playing');
+    });
+
+    // Countdown to January 27, 2027, Jakarta time.
     const weddingDate = new Date('2027-01-27T00:00:00+07:00').getTime();
+    let countdownTimer;
 
     function updateCountdown() {
       const now = Date.now();
-      let remaining = weddingDate - now;
+      const remaining = weddingDate - now;
 
       if (remaining <= 0) {
         ['days', 'hours', 'minutes', 'seconds'].forEach(id => {
@@ -589,16 +788,14 @@
 
         document.getElementById('countdownMessage').textContent =
           'Hari bahagia telah tiba. Semoga penuh berkah!';
+
+        clearInterval(countdownTimer);
         return;
       }
 
       const days = Math.floor(remaining / 86400000);
-      remaining %= 86400000;
-
-      const hours = Math.floor(remaining / 3600000);
-      remaining %= 3600000;
-
-      const minutes = Math.floor(remaining / 60000);
+      const hours = Math.floor((remaining % 86400000) / 3600000);
+      const minutes = Math.floor((remaining % 3600000) / 60000);
       const seconds = Math.floor((remaining % 60000) / 1000);
 
       document.getElementById('days').textContent = days;
@@ -611,8 +808,9 @@
     }
 
     updateCountdown();
-    setInterval(updateCountdown, 1000);
+    countdownTimer = setInterval(updateCountdown, 1000);
 
+    // Copy bank account number
     document.getElementById('copyAccount').addEventListener('click', async () => {
       const number = document.getElementById('accountNumber').textContent.trim();
       const message = document.getElementById('copyMessage');
@@ -639,6 +837,33 @@
 
         textArea.remove();
       }
+    });
+
+    // Gallery lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightbox.classList.remove('hidden');
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      lightboxImage.src = '';
+    }
+
+    document.getElementById('closeLightbox').addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', event => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeLightbox();
     });
   </script>
 
