@@ -39,6 +39,7 @@
     img { max-width: 100%; }
     .hidden { display: none !important; }
 
+    /* HALAMAN PEMBUKA: FOTO LATAR BARU */
     .cover {
       min-height: 100vh;
       min-height: 100svh;
@@ -51,7 +52,7 @@
       overflow: hidden;
       background:
         linear-gradient(#f8f5efdf, #f8f5efeb),
-        url('images/chaska.jpeg') center 35% / cover;
+        url('images/pp.jpeg') center 35% / cover;
     }
 
     .cover:before {
@@ -441,7 +442,6 @@
         <h2>Galeri Kenangan</h2>
         <p class="muted">Tekan foto untuk melihat ukuran lebih besar.</p>
 
-        <!-- Unggah 4 foto dengan nama file yang sama di folder images -->
         <div class="gallery">
           <img src="images/galeri-1.jpeg" alt="Foto galeri 1" loading="lazy">
           <img src="images/galeri-2.jpeg" alt="Foto galeri 2" loading="lazy">
@@ -533,7 +533,6 @@
     </section>
   </main>
 
-  <!-- Unggah lagu MP3 ke music/wedding.mp3 agar musik bisa diputar -->
   <audio id="weddingMusic" src="music/wedding.mp3" loop preload="none"></audio>
   <button id="musicButton" class="music-button hidden"
           aria-label="Putar atau jeda musik" title="Musik">♪</button>
@@ -551,14 +550,13 @@
   </footer>
 
   <script>
-    // Nama tamu dapat ditampilkan lewat URL: ?to=Nama%20Tamu
     const params = new URLSearchParams(window.location.search);
     const guest = params.get('to');
+
     if (guest) {
       document.getElementById('guestName').textContent = guest.slice(0, 100);
     }
 
-    // Hitung mundur menuju 27 Januari 2027, waktu Indonesia Barat.
     const weddingDate = new Date('2027-01-27T00:00:00+07:00').getTime();
     let countdownTimer;
 
@@ -570,6 +568,7 @@
         ids.forEach(id => {
           document.getElementById(id).textContent = '0';
         });
+
         document.getElementById('countdownMessage').textContent =
           'Hari bahagia telah tiba. Semoga penuh berkah!';
         clearInterval(countdownTimer);
@@ -595,7 +594,6 @@
     updateCountdown();
     countdownTimer = setInterval(updateCountdown, 1000);
 
-    // Musik dicoba diputar setelah pengunjung menekan tombol.
     const music = document.getElementById('weddingMusic');
     const musicButton = document.getElementById('musicButton');
 
@@ -621,7 +619,7 @@
           musicButton.textContent = '♫';
           musicButton.classList.add('playing');
         } catch {
-          alert('Musik belum tersedia. Unggah file music/wedding.mp3 ke GitHub.');
+          alert('Musik belum tersedia. Pastikan file music/wedding.mp3 sudah diunggah ke GitHub.');
         }
       } else {
         music.pause();
@@ -630,7 +628,6 @@
       }
     });
 
-    // Tombol salin nomor rekening.
     document.getElementById('copyAccount').addEventListener('click', async () => {
       const number = document.getElementById('accountNumber').textContent.trim();
       const message = document.getElementById('copyMessage');
@@ -659,7 +656,6 @@
       }
     });
 
-    // Tautan WhatsApp.
     const whatsappNumber = '6285773334303';
     const whatsappMessage =
       "Assalamu'alaikum, saya ingin mengirimkan ucapan pernikahan untuk Chaska Vebriansyah dan Feristha Mathasia.";
@@ -668,7 +664,6 @@
       'https://wa.me/' + whatsappNumber +
       '?text=' + encodeURIComponent(whatsappMessage);
 
-    // Klik foto galeri untuk memperbesar.
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
 
