@@ -1,32 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#4b0d1b">
-  <meta name="description" content="Undangan pernikahan Chaska Vebriansyah dan Feristha Mathasia, 27 Januari 2027.">
-  <title>Chaska & Feristha | Undangan Pernikahan</title>
+  <meta name="description" content="Undangan pernikahan Chaska Vebriansyah dan Feristha Mathasia, 27 Januari 2027">
+  <title>Chaska &amp; Feristha | Undangan Pernikahan</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
+      --burgundy: #4b0d1b;
+      --burgundy-light: #68172d;
+      --gold: #c8a45e;
       --cream: #f7f0e8;
       --white: #fffaf4;
-      --gold: #c8a45e;
-      --green: #6b2738;
       --ink: #3e2026;
       --muted: #806d6c;
       --border: #e2cfb3;
-      --burgundy: #4b0d1b;
-      --burgundy-light: #68172d;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -36,12 +34,15 @@
       margin: 0;
       color: var(--ink);
       background: var(--cream);
-      font-family: Poppins, sans-serif;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.8;
     }
 
-    button,
-    a {
+    img {
+      max-width: 100%;
+    }
+
+    button, a {
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -54,18 +55,31 @@
       color: inherit;
     }
 
-    img {
-      max-width: 100%;
-    }
-
     .hidden {
       display: none !important;
     }
 
-    /* =========================
-       HALAMAN PEMBUKA
-    ========================= */
+    h1, h2, h3, .script {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+    }
 
+    h2 {
+      font-size: clamp(32px, 6vw, 46px);
+      line-height: 1.25;
+      margin: 10px 0 22px;
+    }
+
+    h3 {
+      font-size: 25px;
+      margin: 12px 0;
+    }
+
+    p {
+      overflow-wrap: anywhere;
+    }
+
+    /* HALAMAN PEMBUKA */
     .cover {
       min-height: 100vh;
       min-height: 100svh;
@@ -78,7 +92,6 @@
       isolation: isolate;
       overflow: hidden;
       color: #fff5e7;
-
       background:
         radial-gradient(
           ellipse at 50% 35%,
@@ -87,14 +100,14 @@
         ),
         linear-gradient(
           135deg,
-          rgba(47, 5, 16, .97),
-          rgba(93, 12, 34, .93)
+          rgba(47, 5, 16, .96),
+          rgba(93, 12, 34, .94)
         ),
         url('images/pp.jpeg') center 35% / cover;
     }
 
-    /* Motif geometris terinspirasi kain tapis/batik Lampung */
-    .cover:before {
+    /* Motif geometris dekoratif terinspirasi kain tapis Lampung */
+    .cover::before {
       content: "";
       position: absolute;
       inset: 15px;
@@ -103,7 +116,6 @@
       outline-offset: 5px;
       pointer-events: none;
       z-index: -1;
-
       background:
         repeating-linear-gradient(
           45deg,
@@ -117,34 +129,27 @@
           rgba(215, 174, 99, .04) 22px 24px,
           transparent 24px 44px
         );
-
-      mask-image: linear-gradient(to bottom, #000, transparent 90%);
     }
 
-    .cover:after {
+    .cover::after {
       content: "";
       position: absolute;
       z-index: -1;
       inset: 0;
       pointer-events: none;
-      opacity: .34;
-
+      opacity: .3;
       background:
         radial-gradient(
           ellipse at 0% 0%,
           transparent 0 40px,
           rgba(211, 171, 100, .28) 41px 43px,
-          transparent 44px 58px,
-          rgba(211, 171, 100, .16) 59px 61px,
-          transparent 62px
+          transparent 44px 58px
         ),
         radial-gradient(
           ellipse at 100% 100%,
           transparent 0 42px,
           rgba(211, 171, 100, .28) 43px 45px,
-          transparent 46px 60px,
-          rgba(211, 171, 100, .16) 61px 63px,
-          transparent 64px
+          transparent 46px 60px
         );
     }
 
@@ -157,25 +162,32 @@
       text-shadow: 0 2px 16px rgba(20, 0, 5, .24);
     }
 
-    /* Ornamen siger Lampung berbentuk SVG */
+    /* GAMBAR SIGER DARI FOLDER IMAGES */
     .siger-ornament {
       width: min(180px, 42vw);
       height: auto;
       display: block;
-      margin: 0 auto 10px;
+      object-fit: contain;
+      margin: 0 auto 14px;
       filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .2));
+    }
+
+    /* Ukuran siger pada halaman isi undangan */
+    .siger-opening {
+      width: 110px;
+      max-width: 34vw;
+      margin: 0 auto 24px;
+    }
+
+    .eyebrow, .section-label {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      color: var(--burgundy-light);
     }
 
     .cover .eyebrow {
       color: #e8ce91;
-    }
-
-    .eyebrow,
-    .section-label {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 11px;
-      color: var(--green);
     }
 
     .cover-content > p {
@@ -184,21 +196,6 @@
 
     .cover h1 {
       color: #fff0d9;
-    }
-
-    .cover .ampersand {
-      color: #e2bd70;
-    }
-
-    h1,
-    h2,
-    h3,
-    .script {
-      font-family: 'Playfair Display', serif;
-      font-weight: 400;
-    }
-
-    .cover h1 {
       font-size: clamp(42px, 9vw, 76px);
       line-height: 1.15;
       margin: 20px 0;
@@ -206,7 +203,7 @@
 
     .ampersand {
       display: block;
-      color: var(--gold);
+      color: #e2bd70;
       font-style: italic;
       font-size: .75em;
     }
@@ -225,10 +222,7 @@
       margin: 18px auto;
     }
 
-    /* =========================
-       TOMBOL
-    ========================= */
-
+    /* TOMBOL */
     .button {
       display: inline-block;
       border: 1px solid var(--gold);
@@ -258,51 +252,15 @@
       color: var(--burgundy);
     }
 
-    /* =========================
-       WARNA BAGIAN UNDANGAN
-    ========================= */
-
-    section:nth-of-type(even) {
-      background-color: #f1e8dc;
-    }
-
-    .section-label {
-      color: #7b2639;
-    }
-
-    .floral {
-      color: var(--gold);
-    }
-
-    .card,
-    .time-box {
-      border-color: #dfc9a6;
-    }
-
-    .event-card h3,
-    .time-box strong,
-    .account-number {
-      color: var(--burgundy);
-    }
-
-    .prayer {
-      border-left-color: var(--gold);
-      background: #fffaf4;
-    }
-
-    .verse {
-      color: var(--burgundy);
-    }
-
-    .music-button {
-      background: var(--burgundy);
-      border-color: var(--gold);
-    }
-
+    /* BAGIAN ISI */
     section {
       padding: 70px 20px;
       text-align: center;
       scroll-margin-top: 20px;
+    }
+
+    section:nth-of-type(even) {
+      background-color: #f1e8dc;
     }
 
     .inner {
@@ -311,19 +269,8 @@
       margin: auto;
     }
 
-    h2 {
-      font-size: clamp(32px, 6vw, 46px);
-      line-height: 1.25;
-      margin: 10px 0 22px;
-    }
-
-    h3 {
-      font-size: 25px;
-      margin: 12px 0;
-    }
-
-    p {
-      overflow-wrap: anywhere;
+    .section-label {
+      color: #7b2639;
     }
 
     .intro {
@@ -332,17 +279,18 @@
     }
 
     .floral {
-      font-size: 29px;
       color: var(--gold);
+      font-size: 29px;
       margin: 12px 0;
     }
 
-    /* =========================
-       KARTU MEMPELAI DAN ACARA
-    ========================= */
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
 
-    .couple-grid,
-    .event-grid {
+    /* KARTU MEMPELAI */
+    .couple-grid, .event-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
@@ -374,15 +322,7 @@
       margin: 18px 0 8px;
     }
 
-    .muted {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* =========================
-       HITUNG MUNDUR
-    ========================= */
-
+    /* HITUNG MUNDUR */
     .countdown {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -401,7 +341,7 @@
       display: block;
       font-size: clamp(22px, 5vw, 34px);
       font-weight: 500;
-      color: var(--green);
+      color: var(--burgundy);
     }
 
     .time-box span {
@@ -409,13 +349,10 @@
     }
 
     .event-card h3 {
-      color: var(--green);
+      color: var(--burgundy);
     }
 
-    /* =========================
-       GALERI FOTO
-    ========================= */
-
+    /* GALERI */
     .gallery {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -437,16 +374,13 @@
       transform: scale(1.02);
     }
 
-    /* =========================
-       DOA
-    ========================= */
-
+    /* DOA */
     .verse {
       font-family: serif;
       font-size: 27px;
       line-height: 2;
       direction: rtl;
-      color: var(--green);
+      color: var(--burgundy);
     }
 
     .prayer {
@@ -458,29 +392,23 @@
       overflow-wrap: anywhere;
     }
 
-    /* =========================
-       REKENING
-    ========================= */
-
+    /* REKENING */
     .account-number {
       font-size: clamp(19px, 4vw, 27px);
       letter-spacing: 1px;
       font-weight: 500;
-      color: var(--green);
+      color: var(--burgundy);
       overflow-wrap: anywhere;
     }
 
-    /* =========================
-       TOMBOL MUSIK
-    ========================= */
-
+    /* TOMBOL MUSIK */
     .music-button {
       position: fixed;
       right: 18px;
       bottom: 18px;
       z-index: 20;
       border: 1px solid var(--gold);
-      background: var(--green);
+      background: var(--burgundy);
       color: white;
       width: 50px;
       height: 50px;
@@ -492,10 +420,7 @@
       animation: rotateMusic 4s linear infinite;
     }
 
-    /* =========================
-       LIGHTBOX FOTO
-    ========================= */
-
+    /* LIGHTBOX GALERI */
     .lightbox {
       position: fixed;
       z-index: 100;
@@ -523,17 +448,13 @@
       border: 0;
     }
 
-    /* =========================
-       FOOTER BURGUNDY DAN EMAS
-    ========================= */
-
+    /* FOOTER */
     footer {
       position: relative;
       overflow: hidden;
       padding: 58px 20px 48px;
       text-align: center;
       color: #fff0dd;
-
       background:
         repeating-linear-gradient(
           45deg,
@@ -547,11 +468,10 @@
           #68172d 55%,
           #3d0817
         );
-
       border-top: 3px solid #c7a35f;
     }
 
-    footer:before {
+    footer::before {
       content: "❧  ✦  ❧";
       display: block;
       color: #d9b66f;
@@ -560,11 +480,11 @@
       margin-bottom: 12px;
     }
 
-    footer .script:first-of-type {
+    footer .footer-label {
       color: #e3c987;
       letter-spacing: 3px;
       text-transform: uppercase;
-      font-family: Poppins, sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 11px;
     }
 
@@ -578,16 +498,11 @@
       color: #e2cdbb;
     }
 
-    /* =========================
-       ANIMASI
-    ========================= */
-
     @keyframes appear {
       from {
         opacity: 0;
         transform: translateY(12px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
@@ -595,22 +510,16 @@
     }
 
     @keyframes rotateMusic {
-      to {
-        transform: rotate(360deg);
-      }
+      to { transform: rotate(360deg); }
     }
 
-    /* =========================
-       TAMPILAN HP
-    ========================= */
-
+    /* TAMPILAN HP */
     @media (max-width: 600px) {
       section {
         padding: 55px 18px;
       }
 
-      .couple-grid,
-      .event-grid {
+      .couple-grid, .event-grid {
         gap: 12px;
       }
 
@@ -651,6 +560,10 @@
         width: min(150px, 40vw);
       }
 
+      .siger-opening {
+        width: 110px;
+      }
+
       .cover-content {
         padding: 12px 4px;
       }
@@ -670,9 +583,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
+      *, *::before, *::after {
         scroll-behavior: auto !important;
         animation-duration: .01ms !important;
         transition-duration: .01ms !important;
@@ -683,56 +594,16 @@
 
 <body>
 
-  <!-- =========================
-       COVER / HALAMAN PEMBUKA
-  ========================= -->
-
+  <!-- HALAMAN PEMBUKA -->
   <header class="cover" id="cover">
     <div class="cover-content">
 
-      <!-- Ilustrasi siger Lampung warna emas -->
-      <svg
+      <!-- Siger Lampung dari folder images -->
+      <img
         class="siger-ornament"
-        viewBox="0 0 240 150"
-        role="img"
-        aria-label="Ornamen siger Lampung berwarna emas"
-        xmlns="http://www.w3.org/2000/svg"
+        src="images/siger-lampung.png"
+        alt="Siger Lampung warna emas"
       >
-        <g
-          fill="none"
-          stroke="#e2bd70"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path
-            d="M28 103 Q18 83 35 65 Q42 54 51 70 L65 86 L77 48 L91 72 L105 26 L120 7 L135 26 L149 72 L163 48 L175 86 L189 70 Q198 54 205 65 Q222 83 212 103 Q120 126 28 103Z"
-            fill="#a97835"
-            fill-opacity=".18"
-          />
-
-          <path d="M28 103 Q120 128 212 103 M42 101 L51 77 L66 96 L78 57 L94 92 L105 34 L120 17 L135 34 L146 92 L162 57 L174 96 L189 77 L198 101"/>
-
-          <path d="M56 108 Q120 122 184 108 M72 113 Q120 126 168 113"/>
-
-          <path d="M105 34 Q120 47 135 34 M94 92 Q120 101 146 92 M66 96 Q120 111 174 96"/>
-
-          <path d="M120 17 L120 1 M113 9 L120 1 L127 9"/>
-
-          <path d="M42 107 L38 126 M63 111 L59 132 M84 115 L81 137 M105 118 L103 140 M135 118 L137 140 M156 115 L159 137 M177 111 L181 132 M198 107 L202 126"/>
-
-          <circle cx="38" cy="130" r="3" fill="#e2bd70"/>
-          <circle cx="59" cy="136" r="3" fill="#e2bd70"/>
-          <circle cx="81" cy="141" r="3" fill="#e2bd70"/>
-          <circle cx="103" cy="144" r="3" fill="#e2bd70"/>
-          <circle cx="137" cy="144" r="3" fill="#e2bd70"/>
-          <circle cx="159" cy="141" r="3" fill="#e2bd70"/>
-          <circle cx="181" cy="136" r="3" fill="#e2bd70"/>
-          <circle cx="202" cy="130" r="3" fill="#e2bd70"/>
-
-          <path d="M18 103 Q10 93 19 82 M222 103 Q230 93 221 82"/>
-        </g>
-      </svg>
 
       <div class="eyebrow">Undangan Pernikahan</div>
 
@@ -748,7 +619,7 @@
 
       <h1>
         Chaska
-        <span class="ampersand">&</span>
+        <span class="ampersand">&amp;</span>
         Feristha
       </h1>
 
@@ -762,24 +633,27 @@
     </div>
   </header>
 
-  <!-- =========================
-       ISI UNDANGAN
-  ========================= -->
-
+  <!-- ISI UNDANGAN -->
   <main id="invitation" class="hidden">
 
-    <!-- PEMBUKA -->
-    <section>
+    <!-- PEMBUKA ISI: SIGER DI ATAS TEKS -->
+    <section id="opening">
       <div class="inner">
-        <div class="floral">❦</div>
+
+        <img
+          class="siger-ornament siger-opening"
+          src="images/siger-lampung.png"
+          alt="Ornamen siger Lampung"
+          loading="lazy"
+        >
 
         <p class="intro">
-          Dengan penuh rasa syukur dan kebahagiaan, kami bermaksud mengundang
-          Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari
-          pernikahan kami.
+          Dengan penuh rasa syukur dan kebahagiaan, kami bermaksud
+          mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan
+          doa restu pada hari pernikahan kami.
         </p>
 
-        <h2>Chaska & Feristha</h2>
+        <h2>Chaska &amp; Feristha</h2>
 
         <p class="muted">
           Dua hati, satu tujuan, selamanya dalam cinta.
@@ -794,18 +668,16 @@
         <h2>Dengan Bahagia</h2>
 
         <div class="couple-grid">
-
           <article class="card">
             <img
               class="couple-img"
               src="images/chaska.jpeg"
               alt="Chaska Vebriansyah"
+              loading="lazy"
             >
 
             <div class="couple-name">Chaska Vebriansyah</div>
-
             <p class="muted">Putra dari</p>
-
             <p>
               <strong>ERWIN SYAHJONI (Alm)</strong><br>
               &amp; <strong>FITRIANI</strong>
@@ -817,18 +689,16 @@
               class="couple-img"
               src="images/feristha.jpeg"
               alt="Feristha Mathasia"
+              loading="lazy"
             >
 
             <div class="couple-name">Feristha Mathasia</div>
-
             <p class="muted">Putri dari</p>
-
             <p>
               <strong>FERI HARTASI</strong><br>
               &amp; <strong>MAHRISA (Alm)</strong>
             </p>
           </article>
-
         </div>
       </div>
     </section>
@@ -838,7 +708,6 @@
       <div class="inner">
         <p class="section-label">Save the Date</p>
         <h2>Menuju Hari Bahagia</h2>
-
         <p>Rabu, 27 Januari 2027</p>
 
         <div class="countdown">
@@ -846,17 +715,14 @@
             <strong id="days">0</strong>
             <span>Hari</span>
           </div>
-
           <div class="time-box">
             <strong id="hours">00</strong>
             <span>Jam</span>
           </div>
-
           <div class="time-box">
             <strong id="minutes">00</strong>
             <span>Menit</span>
           </div>
-
           <div class="time-box">
             <strong id="seconds">00</strong>
             <span>Detik</span>
@@ -869,7 +735,6 @@
         <h2>Hari Pernikahan</h2>
 
         <div class="event-grid">
-
           <article class="card event-card">
             <div class="floral">❀</div>
             <h3>Akad Nikah</h3>
@@ -883,7 +748,6 @@
             <p>Rabu, 27 Januari 2027</p>
             <p>Waktu akan diinformasikan</p>
           </article>
-
         </div>
       </div>
     </section>
@@ -914,45 +778,23 @@
       </div>
     </section>
 
-    <!-- GALERI -->
+    <!-- GALERI FOTO -->
     <section style="background:#fffdf9" id="gallery">
       <div class="inner">
         <p class="section-label">Galeri Foto</p>
         <h2>Galeri Kenangan</h2>
-
-        <p class="muted">
-          Tekan foto untuk melihat ukuran lebih besar.
-        </p>
+        <p class="muted">Tekan foto untuk melihat ukuran lebih besar.</p>
 
         <div class="gallery">
-          <img
-            src="images/galeri-1.jpeg"
-            alt="Foto galeri 1"
-            loading="lazy"
-          >
-
-          <img
-            src="images/galeri-2.jpeg"
-            alt="Foto galeri 2"
-            loading="lazy"
-          >
-
-          <img
-            src="images/galeri-3.jpeg"
-            alt="Foto galeri 3"
-            loading="lazy"
-          >
-
-          <img
-            src="images/galeri-4.jpeg"
-            alt="Foto galeri 4"
-            loading="lazy"
-          >
+          <img src="images/galeri-1.jpeg" alt="Foto galeri 1" loading="lazy">
+          <img src="images/galeri-2.jpeg" alt="Foto galeri 2" loading="lazy">
+          <img src="images/galeri-3.jpeg" alt="Foto galeri 3" loading="lazy">
+          <img src="images/galeri-4.jpeg" alt="Foto galeri 4" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- DOA -->
+    <!-- DOA PERNIKAHAN -->
     <section style="background:#fffdf9" id="prayer">
       <div class="inner">
         <p class="section-label">Doa Pernikahan</p>
@@ -968,9 +810,9 @@
 
           <p>
             Artinya: Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia
-            menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar
-            kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan
-            di antaramu rasa kasih dan sayang.
+            menciptakan pasangan-pasangan untukmu dari jenismu sendiri,
+            agar kamu cenderung dan merasa tenteram kepadanya, dan Dia
+            menjadikan di antaramu rasa kasih dan sayang.
           </p>
         </div>
 
@@ -1001,22 +843,20 @@
         <h2>Amplop Digital</h2>
 
         <p>
-          Doa restu Anda merupakan hadiah terindah bagi kami. Bagi yang ingin
-          berbagi tanda kasih, berikut informasi rekening kami.
+          Doa restu Anda merupakan hadiah terindah bagi kami.
+          Bagi yang ingin berbagi tanda kasih, berikut informasi
+          rekening kami.
         </p>
 
         <div class="card">
           <h3>Bank BRI</h3>
-
           <p class="muted">Nomor rekening</p>
 
           <div class="account-number" id="accountNumber">
             731301005654507
           </div>
 
-          <p>
-            Atas nama <strong>CHASKA VEBRIANSYAH</strong>
-          </p>
+          <p>Atas nama <strong>CHASKA VEBRIANSYAH</strong></p>
 
           <button class="button" id="copyAccount">
             Salin Nomor Rekening
@@ -1051,7 +891,7 @@
       </div>
     </section>
 
-    <!-- PENUTUP UNDANGAN -->
+    <!-- PENUTUP -->
     <section id="closing">
       <div class="inner">
         <div class="floral">❦</div>
@@ -1064,38 +904,23 @@
 
         <p>Wassalamu'alaikum warahmatullahi wabarakatuh.</p>
 
-        <div class="script footer-name">Chaska & Feristha</div>
-
+        <div class="script footer-name">Chaska &amp; Feristha</div>
         <p class="muted">Rabu, 27 Januari 2027</p>
       </div>
     </section>
-
   </main>
 
-  <!-- =========================
-       MUSIK
-  ========================= -->
-
-  <audio
-    id="weddingMusic"
-    src="music/wedding.mp3"
-    loop
-    preload="none"
-  ></audio>
+  <!-- MUSIK: file harus tersedia di music/wedding.mp3 -->
+  <audio id="weddingMusic" src="music/wedding.mp3" loop preload="none"></audio>
 
   <button
     id="musicButton"
     class="music-button hidden"
     aria-label="Putar atau jeda musik"
     title="Musik"
-  >
-    ♪
-  </button>
+  >♪</button>
 
-  <!-- =========================
-       LIGHTBOX GALERI
-  ========================= -->
-
+  <!-- LIGHTBOX FOTO -->
   <div
     id="lightbox"
     class="lightbox hidden"
@@ -1103,43 +928,20 @@
     aria-modal="true"
     aria-label="Pratinjau foto"
   >
-    <button id="closeLightbox" aria-label="Tutup foto">
-      &times;
-    </button>
-
-    <img
-      id="lightboxImage"
-      src=""
-      alt="Foto galeri ukuran besar"
-    >
+    <button id="closeLightbox" aria-label="Tutup foto">&times;</button>
+    <img id="lightboxImage" src="" alt="Foto galeri ukuran besar">
   </div>
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
+  <!-- FOOTER BURGUNDY -->
   <footer>
-    <p class="script">Terima Kasih</p>
-
-    <div class="script footer-name">
-      Chaska & Feristha
-    </div>
-
-    <p>
-      Terima kasih atas doa, kasih sayang, dan kehadiran Anda.
-    </p>
-
-    <p class="muted">
-      Rabu, 27 Januari 2027 · Dengan cinta
-    </p>
+    <p class="footer-label">Terima Kasih</p>
+    <div class="script footer-name">Chaska &amp; Feristha</div>
+    <p>Terima kasih atas doa, kasih sayang, dan kehadiran Anda.</p>
+    <p class="muted">Rabu, 27 Januari 2027 · Dengan cinta</p>
   </footer>
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
   <script>
-    // Nama tamu dapat ditampilkan lewat URL: ?to=Nama%20Tamu
+    // Nama tamu dari URL, contoh: ?to=Bapak%20Andi
     const params = new URLSearchParams(window.location.search);
     const guest = params.get('to');
 
@@ -1148,7 +950,7 @@
         guest.slice(0, 100);
     }
 
-    // Hitung mundur menuju 27 Januari 2027, waktu Indonesia Barat.
+    // Hitung mundur menuju 27 Januari 2027 WIB.
     const weddingDate =
       new Date('2027-01-27T00:00:00+07:00').getTime();
 
@@ -1157,12 +959,7 @@
     function updateCountdown() {
       const remaining = weddingDate - Date.now();
 
-      const ids = [
-        'days',
-        'hours',
-        'minutes',
-        'seconds'
-      ];
+      const ids = ['days', 'hours', 'minutes', 'seconds'];
 
       if (remaining <= 0) {
         ids.forEach(id => {
@@ -1197,7 +994,7 @@
     updateCountdown();
     countdownTimer = setInterval(updateCountdown, 1000);
 
-    // Musik dicoba diputar setelah pengunjung menekan tombol.
+    // Musik mulai dicoba setelah tombol Buka Undangan ditekan.
     const music = document.getElementById('weddingMusic');
     const musicButton = document.getElementById('musicButton');
 
@@ -1209,7 +1006,6 @@
           .classList.remove('hidden');
 
         document.getElementById('cover').style.display = 'none';
-
         musicButton.classList.remove('hidden');
 
         window.scrollTo({
@@ -1219,7 +1015,6 @@
 
         try {
           await music.play();
-
           musicButton.textContent = '♫';
           musicButton.classList.add('playing');
         } catch {
@@ -1231,23 +1026,21 @@
       if (music.paused) {
         try {
           await music.play();
-
           musicButton.textContent = '♫';
           musicButton.classList.add('playing');
         } catch {
           alert(
-            'Musik belum tersedia. Unggah file music/wedding.mp3 ke GitHub.'
+            'Musik belum tersedia. Pastikan file music/wedding.mp3 ada di GitHub.'
           );
         }
       } else {
         music.pause();
-
         musicButton.textContent = '♪';
         musicButton.classList.remove('playing');
       }
     });
 
-    // Tombol salin nomor rekening.
+    // Salin nomor rekening.
     document
       .getElementById('copyAccount')
       .addEventListener('click', async () => {
@@ -1259,12 +1052,9 @@
 
         try {
           await navigator.clipboard.writeText(number);
-
-          message.textContent =
-            'Nomor rekening berhasil disalin.';
+          message.textContent = 'Nomor rekening berhasil disalin.';
         } catch {
           const field = document.createElement('textarea');
-
           field.value = number;
           field.style.position = 'fixed';
           field.style.opacity = '0';
@@ -1306,7 +1096,6 @@
       img.addEventListener('click', () => {
         lightboxImage.src = img.src;
         lightboxImage.alt = img.alt;
-
         lightbox.classList.remove('hidden');
       });
     });
