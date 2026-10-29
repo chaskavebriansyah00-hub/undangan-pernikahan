@@ -39,7 +39,7 @@
     img { max-width: 100%; }
     .hidden { display: none !important; }
 
-    /* HALAMAN PEMBUKA: FOTO LATAR BARU */
+    /* HALAMAN PEMBUKA MENGGUNAKAN PP.JPEG */
     .cover {
       min-height: 100vh;
       min-height: 100svh;
@@ -95,11 +95,13 @@
       font-size: .75em;
     }
 
+    /* FOTO BULAT JUGA MENGGUNAKAN PP.JPEG */
     .cover-photo {
+      display: block;
       width: 125px;
       height: 125px;
       object-fit: cover;
-      object-position: center 30%;
+      object-position: center;
       border-radius: 50%;
       border: 4px solid var(--white);
       outline: 1px solid var(--gold);
@@ -338,8 +340,14 @@
   <header class="cover" id="cover">
     <div class="cover-content">
       <div class="eyebrow">Undangan Pernikahan</div>
-      <img class="cover-photo" src="images/chaska.jpeg" alt="Foto Chaska Vebriansyah"
-           onerror="this.onerror=null;this.src='images/feristha.jpeg'">
+
+      <!-- FOTO BULAT HALAMAN PEMBUKA -->
+      <img
+        class="cover-photo"
+        src="images/pp.jpeg"
+        alt="Foto Chaska dan Feristha"
+      >
+
       <p>Dengan memohon rahmat dan ridho Allah SWT</p>
       <p>Kami mengundang Anda untuk menghadiri pernikahan kami</p>
       <h1>Chaska <span class="ampersand">&</span> Feristha</h1>
@@ -368,6 +376,7 @@
       <div class="inner">
         <p class="section-label">Kedua Mempelai</p>
         <h2>Dengan Bahagia</h2>
+
         <div class="couple-grid">
           <article class="card">
             <img class="couple-img" src="images/chaska.jpeg" alt="Chaska Vebriansyah">
@@ -533,10 +542,12 @@
     </section>
   </main>
 
+  <!-- MUSIK -->
   <audio id="weddingMusic" src="music/wedding.mp3" loop preload="none"></audio>
   <button id="musicButton" class="music-button hidden"
           aria-label="Putar atau jeda musik" title="Musik">♪</button>
 
+  <!-- PEMBESAR FOTO GALERI -->
   <div id="lightbox" class="lightbox hidden" role="dialog"
        aria-modal="true" aria-label="Pratinjau foto">
     <button id="closeLightbox" aria-label="Tutup foto">&times;</button>
@@ -550,6 +561,7 @@
   </footer>
 
   <script>
+    // Nama tamu dapat diatur melalui URL ?to=Nama%20Tamu
     const params = new URLSearchParams(window.location.search);
     const guest = params.get('to');
 
@@ -557,6 +569,7 @@
       document.getElementById('guestName').textContent = guest.slice(0, 100);
     }
 
+    // Hitung mundur menuju 27 Januari 2027 waktu WIB.
     const weddingDate = new Date('2027-01-27T00:00:00+07:00').getTime();
     let countdownTimer;
 
@@ -594,6 +607,7 @@
     updateCountdown();
     countdownTimer = setInterval(updateCountdown, 1000);
 
+    // Musik dicoba diputar setelah tombol Buka Undangan ditekan.
     const music = document.getElementById('weddingMusic');
     const musicButton = document.getElementById('musicButton');
 
@@ -628,6 +642,7 @@
       }
     });
 
+    // Tombol salin nomor rekening.
     document.getElementById('copyAccount').addEventListener('click', async () => {
       const number = document.getElementById('accountNumber').textContent.trim();
       const message = document.getElementById('copyMessage');
@@ -656,6 +671,7 @@
       }
     });
 
+    // Tautan WhatsApp.
     const whatsappNumber = '6285773334303';
     const whatsappMessage =
       "Assalamu'alaikum, saya ingin mengirimkan ucapan pernikahan untuk Chaska Vebriansyah dan Feristha Mathasia.";
@@ -664,6 +680,7 @@
       'https://wa.me/' + whatsappNumber +
       '?text=' + encodeURIComponent(whatsappMessage);
 
+    // Klik foto galeri untuk memperbesar.
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
 
